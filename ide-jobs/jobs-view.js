@@ -13,7 +13,7 @@ exports.getView = function() {
 			"id":"jobs",
 			"name":"Jobs",
 			"factory":"frame",
-			"region":"center-bottom",
+			"region":"center-middle",
 			"label":"Jobs",
 			"link":"../ide-jobs/jobs.html"
 	};
