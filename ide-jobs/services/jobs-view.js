@@ -15,7 +15,7 @@ exports.getView = function() {
 			"factory":"frame",
 			"region":"center-middle",
 			"label":"Jobs",
-			"link":"../ide-jobs/jobs.html"
+			"link":"../ide-jobs/view/jobs.html"
 	};
 	return view;
-}
+};
