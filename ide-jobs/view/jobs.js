@@ -9,13 +9,12 @@
  *   SAP - initial API and implementation
  */
 angular.module('jobs', [])
-.controller('JobsController', ['$scope', '$http', function ($scope, $http) {
+	.controller('JobsController', ['$scope', '$http', function ($scope, $http) {
 
-	$http.get('../../../ops/jobs').then(function(response) {
-		$scope.jobsList = response.data;
+		$http.get('/services/v4/ops/jobs').then(function (response) {
+			$scope.jobsList = response.data;
+		});
+
+	}]).config(function ($sceProvider) {
+		$sceProvider.enabled(false);
 	});
-
-
-}]).config(function($sceProvider) {
-    $sceProvider.enabled(false);
-});

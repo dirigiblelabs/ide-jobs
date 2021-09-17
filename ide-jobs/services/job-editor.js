@@ -8,15 +8,14 @@
  * Contributors:
  *   SAP - initial API and implementation
  */
-exports.getEditor = function() {
-	var editor = {
-			"id":"job",
-			"name":"Job",
-			"factory":"frame",
-			"region":"center-top",
-			"label":"Job",
-			"link":"../ide-jobs/editor/editor.html",
-			"contentTypes":["application/json+job"]
+exports.getEditor = function () {
+	return {
+		"id": "job",
+		"name": "Job",
+		"factory": "frame",
+		"region": "center-top",
+		"label": "Job",
+		"link": "../ide-jobs/editor/editor.html",
+		"contentTypes": ["application/json+job"]
 	};
-	return editor;
 };

@@ -8,12 +8,11 @@
  * Contributors:
  *   SAP - initial API and implementation
  */
-exports.getTemplate = function() {
-	var view = {
-			"name":"job",
-			"label":"Scheduled Job",
-			"extension":"job",
-			"data":JSON.stringify(JSON.parse('{"expression":"0/10 * * * * ?","group":"dirigible-defined","handler":"myproject/myhandler.js","description":"My Job"}'), null, 2)
+exports.getTemplate = function () {
+	return {
+		"name": "job",
+		"label": "Scheduled Job",
+		"extension": "job",
+		"data": JSON.stringify(JSON.parse('{"expression":"0/10 * * * * ?","group":"dirigible-defined","handler":"myproject/myhandler.js","description":"My Job"}'), null, 2)
 	};
-	return view;
 };
