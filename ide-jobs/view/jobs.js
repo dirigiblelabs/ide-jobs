@@ -15,6 +15,4 @@ angular.module('jobs', [])
 			$scope.jobsList = response.data;
 		});
 
-	}]).config(function ($sceProvider) {
-		$sceProvider.enabled(false);
-	});
+	}]);
