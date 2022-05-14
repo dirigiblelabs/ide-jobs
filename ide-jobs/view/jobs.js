@@ -15,23 +15,34 @@ angular.module('jobs', [])
 			$scope.jobsList = response.data;
 		});
 
-		$scope.enable = function (name) {
-			$http.post('/services/v4/ops/jobs/enable/' + name)
+		$scope.enable = function (job) {
+			$http.post('/services/v4/ops/jobs/enable/' + job.name)
 				.then(function (response) {
 					console.info(response.data.name + " has been enabled.");
+					job.enabled = true;
 				}, function (response) {
 					console.error(response.data);
 				});
 		}
 
-		$scope.disable = function (name) {
-			$http.post('/services/v4/ops/jobs/disable/' + name)
+		$scope.disable = function (job) {
+			$http.post('/services/v4/ops/jobs/disable/' + job.name)
 				.then(function (response) {
 					console.info(response.data.name + " has been disabled.");
+					job.enabled = false;
 				}, function (response) {
 					console.error(response.data);
 				});
 		}
 
+		$scope.getLogs = function (job) {
+			$http.get('/services/v4/ops/jobs/logs/' + job.name)
+				.then(function (response) {
+					$scope.name = job.name;
+					$scope.logs = response.data;
+				}, function (response) {
+					console.error(response.data);
+				});
+		}
 
 	}]);
