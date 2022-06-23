@@ -66,45 +66,42 @@
                             <tr fd-table-row ng-repeat="next in list" hoverable="true" activable="false">
                                 <td fd-table-cell width="50px">
                                     <div ng-show="{{next.status === 0}}" class="tdSingleLine">
-                                        <span class="btn btn-primary"><i class="fa fa-history"
-                                                aria-hidden="true"></i></span>
+                                        <span class="sap-icon sap-icon--play sap-icon--color-neutral"></span>
                                     </div>
                                     <div ng-show="{{next.status === 1}}" class="tdSingleLine">
-                                        <span class="btn btn-success"><i class="fa fa-check"
-                                                aria-hidden="true"></i></span>
+                                        <span
+                                            class="sap-icon sap-icon--status-positive sap-icon--color-positive"></span>
                                     </div>
                                     <div ng-show="{{next.status === -1}}" class="tdSingleLine">
-                                        <span class="btn btn-danger"><i class="fa fa-times-rectangle"
-                                                aria-hidden="true"></i></span>
+                                        <span class="sap-icon sap-icon--status-error sap-icon--color-negative"></span>
                                     </div>
                                     <div ng-show="{{next.status === 2}}" class="tdSingleLine">
-                                        <span class="btn btn-info"><i class="fa fa-file" aria-hidden="true"></i></span>
+                                        <span class="sap-icon sap-icon--information sap-icon--color-neutral"></span>
                                     </div>
                                     <div ng-show="{{next.status === 3}}" class="tdSingleLine">
-                                        <span class="btn btn-danger"><i class="fa fa-times-circle"
-                                                aria-hidden="true"></i></span>
+                                        <span class="sap-icon sap-icon--status-error sap-icon--color-negative"></span>
                                     </div>
                                     <div ng-show="{{next.status === 4}}" class="tdSingleLine">
-                                        <span class="btn btn-warning"><i class="fa fa-warning"
-                                                aria-hidden="true"></i></span>
+                                        <span
+                                            class="sap-icon sap-icon--status-critical sap-icon--color-critical"></span>
                                     </div>
                                     <div ng-show="{{next.status === 5}}" class="tdSingleLine">
-                                        <span class="btn btn-info"><i class="fa fa-info-circle"
-                                                aria-hidden="true"></i></span>
+                                        <span class="sap-icon sap-icon--information sap-icon--color-information"></span>
                                     </div>
                                     <div ng-show="{{next.status === 99}}" class="tdSingleLine">
-                                        <span class="btn btn-warning"><i class="fa fa-question-circle"
-                                                aria-hidden="true"></i></span>
+                                        <span class="sap-icon sap-icon--question-mark sap-icon--color-neutral"></span>
                                     </div>
                                 </td>
                                 <td fd-table-cell width="50px">
                                     <div ng-show="next.enabled" class="tdSingleLine">
-                                        <button class="btn" ng-click="disable(next)"><i class="fa fa-toggle-on"
-                                                aria-hidden="true"></i></button>
+                                        <fd-button dg-type="transparent" glyph="sap-icon--connected" title="Disable"
+                                            aria-label="Disable" ng-click="disable(next)" aria-hidden="true">
+                                        </fd-button>
                                     </div>
                                     <div ng-hide="!!next.enabled" class="tdSingleLine">
-                                        <button class="btn" ng-click="enable(next)"><i class="fa fa-toggle-off"
-                                                aria-hidden="true"></i></button>
+                                        <fd-button dg-type="transparent" glyph="sap-icon--disconnected" title="Enable"
+                                            aria-label="Enable" ng-click="enable(next)" aria-hidden="true">
+                                        </fd-button>
                                     </div>
                                 </td>
                                 <td fd-table-cell>
@@ -123,15 +120,19 @@
                                     <div class="tdSingleLine">{{next.message}}</div>
                                 </td>
                                 <td fd-table-cell width="50px">
-                                    <div class="tdSingleLine"><button class="btn" ng-click="getLogs(next)"
-                                            data-toggle="modal" data-target="#dialogLogs"><i class="fa fa-history"
-                                                aria-hidden="true"></i></button>
+                                    <div class="tdSingleLine">
+                                        <fd-button dg-type="transparent" glyph="sap-icon--history" title="Logs"
+                                            aria-label="Logs" ng-click="getLogs(next)" aria-hidden="true"
+                                            data-toggle="modal" data-target="#dialogLogs">
+                                        </fd-button>
                                     </div>
                                 </td>
                                 <td fd-table-cell width="50px">
-                                    <div class="tdSingleLine"><button class="btn" ng-click="getParameters(next)"
-                                            data-toggle="modal" data-target="#dialogTrigger">&nbsp;<i
-                                                class="fa fa-ellipsis-v" aria-hidden="true"></i>&nbsp;</button>
+                                    <div class="tdSingleLine">
+                                        <fd-button dg-type="transparent" glyph="sap-icon--play" title="Trigger"
+                                            aria-label="Trigger" ng-click="getParameters(next)" aria-hidden="true"
+                                            data-toggle="modal" data-target="#dialogTrigger">
+                                        </fd-button>
                                     </div>
                                 </td>
                             </tr>
@@ -172,32 +173,31 @@
                                     <tr fd-table-row ng-repeat="next in logs" hoverable="true" activable="false">
                                         <td fd-table-cell width="50px">
                                             <div ng-show="{{next.status === 0}}" class="tdSingleLine">
-                                                <span class="btn btn-primary"><i class="fa fa-history"
-                                                        aria-hidden="true"></i></span>
+                                                <span class="sap-icon sap-icon--play sap-icon--color-neutral"></span>
                                             </div>
                                             <div ng-show="{{next.status === 1}}" class="tdSingleLine">
-                                                <span class="btn btn-success"><i class="fa fa-check"
-                                                        aria-hidden="true"></i></span>
+                                                <span
+                                                    class="sap-icon sap-icon--status-positive sap-icon--color-positive"></span>
                                             </div>
                                             <div ng-show="{{next.status === -1}}" class="tdSingleLine">
-                                                <span class="btn btn-danger"><i class="fa fa-times-rectangle"
-                                                        aria-hidden="true"></i></span>
+                                                <span
+                                                    class="sap-icon sap-icon--status-error sap-icon--color-negative"></span>
                                             </div>
                                             <div ng-show="{{next.status === 2}}" class="tdSingleLine">
-                                                <span class="btn btn-info"><i class="fa fa-file"
-                                                        aria-hidden="true"></i></span>
+                                                <span
+                                                    class="sap-icon sap-icon--information sap-icon--color-neutral"></span>
                                             </div>
                                             <div ng-show="{{next.status === 3}}" class="tdSingleLine">
-                                                <span class="btn btn-danger"><i class="fa fa-times-circle"
-                                                        aria-hidden="true"></i></span>
+                                                <span
+                                                    class="sap-icon sap-icon--status-error sap-icon--color-negative"></span>
                                             </div>
                                             <div ng-show="{{next.status === 4}}" class="tdSingleLine">
-                                                <span class="btn btn-warning"><i class="fa fa-warning"
-                                                        aria-hidden="true"></i></span>
+                                                <span
+                                                    class="sap-icon sap-icon--status-critical sap-icon--color-critical"></span>
                                             </div>
                                             <div ng-show="{{next.status === 5}}" class="tdSingleLine">
-                                                <span class="btn btn-info"><i class="fa fa-info-circle"
-                                                        aria-hidden="true"></i></span>
+                                                <span
+                                                    class="sap-icon sap-icon--information sap-icon--color-information"></span>
                                             </div>
                                         </td>
                                         <td fd-table-cell>
