@@ -82,4 +82,16 @@ jobsView.controller('JobsController', ['$scope', '$http', function ($scope, $htt
 			});
 	}
 
+	$scope.clearLogs = function (name) {
+		$http.post('/services/v4/ops/jobs/clear/' + $scope.job.name, $scope.map)
+			.then(function (response) {
+				messageHub.announceAlertInfo(
+					"Job Logs",
+					'Execution logs of the job ' + name + ' has been deleted.'
+				);
+			}, function (response) {
+				console.error(response.data);
+			});
+	}
+
 }]);
