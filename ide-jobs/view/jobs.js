@@ -89,6 +89,13 @@ jobsView.controller('JobsController', ['$scope', '$http', 'messageHub', function
 					"Job Logs",
 					'Execution logs of the job ' + name + ' has been deleted.'
 				);
+				$http.get('/services/v4/ops/jobs/logs/' + name)
+					.then(function (response) {
+						$scope.name = name;
+						$scope.logs = response.data;
+					}, function (response) {
+						console.error(response.data);
+					});
 			}, function (response) {
 				console.error(response.data);
 			});
